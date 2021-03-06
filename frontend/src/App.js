@@ -3,11 +3,11 @@ import Menu from './components/menu/Menu'
 
 function App() {
   return (
-    <div>
-
+    
+    <div style={{width:"100%"}}>
       <Menu></Menu>
     </div>
-
+    
   );
 }
 

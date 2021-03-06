@@ -36,9 +36,18 @@
     color: white;
     font-size: xx-large ;
     font-family: cursive;
+    margin-top: 10px;
+}
+
+.col{
+    padding-right: 2px!important;
 }
 
 body {
     background: #007bff;
     background: linear-gradient(to right, #0062E6, #33AEFF);
-  }
+}
+
+  
+
+  

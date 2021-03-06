@@ -20,6 +20,7 @@ app.use(cors());
 
 // ***** routes *****
 app.use(require('./routes/players.routes'));
+app.use(require('./routes/games.routes'));
 // app.use(require('./routes/posts.routes'));
 
 // starting the server
