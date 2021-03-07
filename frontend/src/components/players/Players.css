@@ -5,3 +5,9 @@
 .col-form-label {
     white-space: nowrap!important;
 }
+
+.span-mnf{
+    color: red;
+    font-weight: bold;
+    font-size: smaller;
+  }

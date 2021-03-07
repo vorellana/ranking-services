@@ -1,6 +1,7 @@
 const exp = {};
 
 const { getPoolCon } = require('../utils/connection-db');
+const { rankingBoard, getRankedArr } = require('../utils/ranking-functions');
 
 exp.getGames = async(req, res) => {
     const response = await getPoolCon().query('SELECT * FROM public.game');
@@ -12,6 +13,15 @@ exp.getGamesByPlayer = async(req, res) => {
     const idPlayer = parseInt(req.params.idPlayer);
     const response = await getPoolCon().query('SELECT * FROM public.game WHERE id_player = $1 ORDER BY index DESC', [idPlayer]);
     console.log(response.rows);
+
+    let ranked = await getRankedArr();
+    
+    for(let i = 0; i < response.rows.length; i++){
+        let player = [response.rows[i].score]
+        let result = rankingBoard(ranked, player);
+        response.rows[i].ranked = result[0];
+    }
+
     res.json(response.rows);
 }
 

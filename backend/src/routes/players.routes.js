@@ -1,4 +1,5 @@
 const { Router } = require('express');
+const { verifyToken } = require('../middlewares/authJwt');
 const router = Router();
 
 const{ 
@@ -11,10 +12,10 @@ const{
 
 const base = '/api/players';
 
-router.get(base, getPlayers);
-router.get(base + '/:id', getPlayerById);
-router.post(base, createPlayer);
-router.put(base + '/:id', updatePlayer);
-router.delete(base + '/:id', deletePlayer);
+router.get(base, [verifyToken], getPlayers);
+router.get(base + '/:id', [verifyToken], getPlayerById);
+router.post(base, [verifyToken], createPlayer);
+router.put(base + '/:id', [verifyToken], updatePlayer);
+router.delete(base + '/:id', [verifyToken], deletePlayer);
 
 module.exports = router;

@@ -3,9 +3,7 @@ const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
 const app = express();
-//const session = require('express-session');|
-const cookieSession = require('cookie-session');
-// const mongoose = require('mongoose');
+
 require('dotenv').config();
 
 // ***** Conexion DB *****
@@ -21,7 +19,9 @@ app.use(cors());
 // ***** routes *****
 app.use(require('./routes/players.routes'));
 app.use(require('./routes/games.routes'));
-// app.use(require('./routes/posts.routes'));
+app.use(require('./routes/ranked.routes'));
+app.use(require('./routes/ranking.routes'));
+app.use(require('./routes/auth.routes'));
 
 // starting the server
 app.listen(app.get('port'), () => {

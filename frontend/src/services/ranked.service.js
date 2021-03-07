@@ -8,9 +8,9 @@ const headers = misc.getHeaderToken();
 const baseUrl = 'http://localhost:3000/api';
 let response;
 
-exp.getPlayers = async ()  => {
-    console.log("Players: Get");
-    await axios.get(baseUrl + '/players', headers)
+exp.getRanked = async ()  => {
+    console.log("Ranked: Get");
+    await axios.get(baseUrl + '/ranked', headers)
     .then( res => {
         response = res.data;
     })

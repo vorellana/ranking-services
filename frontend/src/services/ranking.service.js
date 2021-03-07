@@ -1,5 +1,6 @@
 import axios from 'axios';
 import misc from './../utils/misc'
+
 const exp = {}
 const headers = misc.getHeaderToken();
 
@@ -7,19 +8,18 @@ const headers = misc.getHeaderToken();
 const baseUrl = 'http://localhost:3000/api';
 let response;
 
-exp.getGamesByPlayer = async (idPlayer)  => {
-    console.log("Games: Get");
-    await axios.get(baseUrl + '/games/' + idPlayer, headers)
+exp.getRanking = async ()  => {
+    console.log("Ranking: Get");
+    await axios.get(baseUrl + '/ranking', headers)
     .then( res => {
         response = res.data;
     })
     return response;
 }
 
-exp.insertGame = async (idPlayer, score)  => {
-    console.log("Game: insert");
-    await axios.post(baseUrl + '/games',
-        {idPlayer: idPlayer, score: score}, headers)
+exp.getRankingBoard = async (rankedText, playerText)  => {
+    console.log("RankingBoard: Post");
+    await axios.post(baseUrl + '/ranking/board', {rankedText, playerText}, headers)
     .then( res => {
         response = res.data;
     })

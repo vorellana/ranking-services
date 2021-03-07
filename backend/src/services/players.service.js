@@ -3,17 +3,6 @@ const exp = {};
 const { getPoolCon } = require('../utils/connection-db');
 
 exp.getPlayers = async(req, res) => {
-    // await res.json({ username: 'Flavio' })
-    // let ranked = [100,90,90,80];
-    // let ranked = [90,90,100,80];
-    let ranked = [90,50,10,100,70,50,70,30,10,20,10,40,80];
-    // let player = [70,80,105];
-
-    // let player = [70,10,60,80,105];
-    // let player = [7,70,10,60,80,105];
-    let player = [7,70,10,60,80,89];
-
-    // await res.json(rankingBoard(ranked, player))
     const response = await getPoolCon().query('SELECT * FROM public.player');
     console.log(response.rows);
     res.json(response.rows);
@@ -69,40 +58,6 @@ exp.deletePlayer = async(req, res) => {
     } catch (error) {
         res.json({success: false, error});
     }
-}
-
-const rankingBoard = (ranked, player) => {
-    let result = [];
-
-    // sorting ranked
-    ranked.sort(function(a, b) {return b - a;});
-
-    // cleaning duplicates of ranked
-    if (ranked.length >= 2){
-        for(let i = 1; i < ranked.length; i++){
-            if(ranked[i-1] === ranked[i] ){
-                ranked.splice(i, 1);
-                i--;
-            }
-        }
-    }
-
-    // sorting player
-    player.sort(function(a, b) {return a - b;});
-
-    for(let i = 0; i < player.length; i++){
-        for(let j = ranked.length - 1; j >= 0; j--){
-            if(j === (ranked.length - 1) && player[i] < ranked[j] ){
-               result.push(j+2);
-            } else if(j === 0 && player[i] >= ranked[j] ){
-                result.push(1);
-            } else if(player[i] < ranked[j - 1] && player[i] >= ranked[j]) {
-                    result.push(j+1);
-            }
-        }
-    }
-    // console.log(result);
-    return result;
 }
 
 module.exports = exp;
