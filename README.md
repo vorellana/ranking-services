@@ -15,8 +15,8 @@ Una vez finalizado el proceso de instalación ingresamos en un navegador a la si
 http://localhost:5000
 ```
 Ingresamos con cualquiera de las siguientes credenciales
-user: admin / Password: admin
-user: vorellana / Password: 123456
+* user: admin / Password: admin
+* user: vorellana / Password: 123456
 
 ## Tecnologías de desarrollo
 Para el presente proyecto se utilizarón las siguientes tecnologías como librerías, frameworks, servicios en la nube, herramientas de despliegue entre otros.
