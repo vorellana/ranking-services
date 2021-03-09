@@ -94,18 +94,6 @@ function Players({handleOptionsMenu}){
         <option value={item.id_player}>{item.name}</option>
     );
 
-    // const listItemsPlayers = async () => {
-
-    //     if(players.length === 0){
-    //         return(<div></div>);
-    //     }
-    //     else{
-    //          players.map((item) =>{
-    //             return(<option value={item.id_player}>{item.name}</option>)
-    //         });
-    //     }
-    // }
-
     const listItemsGames = games.map((item) =>
         <tr>
             <td>{item.index}</td>
@@ -125,13 +113,7 @@ function Players({handleOptionsMenu}){
                         <div class="col-lg-10">
                             <select className="form-control"  value = {idPlayer} onChange = {e => setIdPlayer(e.target.value)}>
                                 <option hidden selected value={0}>(Select a player)</option>
-                                {/* {(players.length === 0?
-                                    <div></div>
-                                    :
-                                    {listItemsPlayers}
-                                )} */}
                                 {listItemsPlayers}
-
                             </select>
                             <span className="span-mnf" hidden={showValidPlayer}>You must select a player</span>
                         </div>
@@ -190,7 +172,7 @@ function Players({handleOptionsMenu}){
                             </div>
                         </div>
                         <div className="d-flex justify-content-center" style={{marginTop: 10}}>
-                            <p>Procesando...</p>
+                            <p>Checking...</p>
                         </div>                            
                 </Modal.Body>
             </Modal>

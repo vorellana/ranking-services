@@ -13,17 +13,3 @@ class App extends React.Component{
 }
 export default App;
 
-
-// // import Menu from './components/menu/Menu'
-
-// // function App() {
-// //   return (
-    
-// //     <div style={{width:"100%"}}>
-// //       <Menu></Menu>
-// //     </div>
-    
-// //   );
-// // }
-
-// // export default App;

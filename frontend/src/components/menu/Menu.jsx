@@ -24,11 +24,12 @@ function Menu() {
     const [firstName, setFirstName ] = useState(cookies.get('firstName'));
 
     const logout = async () => {
-        cookies.remove('isAuthenticated', {path: "/"});
+        // cookies.remove('isAuthenticated', {path: "/"});
         cookies.remove('idUser', {path: "/"});
         cookies.remove('userName', {path: "/"});
         cookies.remove('firstName', {path: "/"});
-        cookies.remove('token', {path: "/"});
+        // cookies.remove('token', {path: "/"});
+        localStorage.removeItem("jwt");
         window.location.href=".";
     }
 

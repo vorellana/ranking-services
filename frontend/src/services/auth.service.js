@@ -1,9 +1,8 @@
 import axios from 'axios';
+import misc from './../utils/misc'
 
 const exp = {}
-
-// const baseUrl = process.env.REACT_APP_API_MFC;
-const baseUrl = 'http://localhost:3000/api';
+const baseUrl = misc.getBackendUrl();
 let response;
 
 exp.signin = async (userName, password)  => {

@@ -9,7 +9,7 @@ require('dotenv').config();
 // ***** Conexion DB *****
 
 // ***** settings *****
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT_BACKEND);
 app.set('json spaces', 2);
 app.use(morgan('dev')); // print console log
 app.use(express.json()); // to understand json format

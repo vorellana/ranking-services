@@ -1,5 +1,5 @@
 import './Login.css'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal'
 import authService from './../../services/auth.service'
@@ -55,14 +55,16 @@ function Login (){
             setOpenLoaderModal(true);
             let res = await authService.signin(userName, password);
             setOpenLoaderModal(false);
-            var decoded = jwt_decode(res.token);
-
+            
             if (res.auth){
-                cookies.set('isAuthenticated', true, { path: '/' });
+                let decoded = jwt_decode(res.token);
+                // cookies.set('isAuthenticated', true, { path: '/' });
                 cookies.set('idUser', decoded.idUser, { path: '/' });
                 cookies.set('userName', decoded.userName, { path: '/' });
                 cookies.set('firstName', decoded.firstName, { path: '/' });
-                cookies.set('token', res.token, { path: '/' });
+                // cookies.set('token', res.token, { path: '/' });
+                localStorage.setItem("jwt",res.token);
+
                 window.location.href="./menu";
             }else{
                 setUserName("");
