@@ -1,5 +1,5 @@
 # Ranking Services
-Desarrollado principalmente en **Node.js, React y MongoDB** y con despliegue en **Docker**.
+Desarrollado principalmente en **Node.js, React y PostgreSQL** y con despliegue en **Docker**.
 <Imagen total>
 
 ## Instalación y uso
