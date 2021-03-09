@@ -1,9 +1,8 @@
-
 # Ranking Services
 Desarrollado principalmente en **Node.js, React y MongoDB** y con despliegue en **Docker**.
 <Imagen total>
 
-# Instalación y uso
+## Instalación y uso
 **Es un requisito tener instalado docker-compose.** Si no lo tiene puede ver el siguiente enlace para su instalación.
 https://docs.docker.com/compose/install/
 ```sh
@@ -12,18 +11,14 @@ cd ranking-services # entramos a la carpeta del proyecto
 docker-compose up -d # iniciamos la instalación del proyecto
 ```
 Una vez finalizado el proceso de instalación ingresamos en un navegador a la siguiente dirección
+```sh
+http://localhost:5000
+```
+Ingresamos con cualquiera de las siguientes credenciales
+user: admin / Password: admin
+user: vorellana / Password: 123456
 
-**http://localhost:5000**
-Ingresamos con las siguiente credenciales:
-
-user: admin
-Password: admin
-
-tambien con
-user: vorellana
-Password: 123456
-
-# Tecnologías de desarrollo
+## Tecnologías de desarrollo
 Para el presente proyecto se utilizarón las siguientes tecnologías como librerías, frameworks, servicios en la nube, herramientas de despliegue entre otros.
 
 ### Backend
