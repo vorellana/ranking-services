@@ -8,6 +8,7 @@ services:
    context: ./backend
    dockerfile: Dockerfile
   environment:
+   PORT_BACKEND: 3000
    HOST_DB: database
    USER_DB: postgres
    PASSWORD_DB: 123456
