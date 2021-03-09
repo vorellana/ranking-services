@@ -7,9 +7,14 @@ Desarrollado principalmente en **Node.js, React y PostgreSQL** y con despliegue 
 **Es un requisito tener instalado docker-compose.** Si no lo tiene puede ver el siguiente enlace para su instalación.
 https://docs.docker.com/compose/install/
 ```sh
-git clone https://github.com/vorellana/ranking-services.git # descargamos el proyecto
-cd ranking-services # entramos a la carpeta del proyecto
-docker-compose up -d # iniciamos la instalación del proyecto
+# descargamos el proyecto
+git clone https://github.com/vorellana/ranking-services.git 
+
+# entramos a la carpeta del proyecto
+cd ranking-services
+
+# iniciamos la instalación del proyecto
+docker-compose up -d 
 ```
 Una vez finalizado el proceso de instalación ingresamos en un navegador a la siguiente dirección
 ```sh
