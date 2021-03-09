@@ -1,6 +1,7 @@
 # Ranking Services
 Desarrollado principalmente en **Node.js, React y PostgreSQL** y con despliegue en **Docker**.
 <Imagen total>
+  ![alt text](https://github.com/vorellana/ranking-services/blob/main/resources/total.png?raw=true)
 
 ## Instalación y uso
 **Es un requisito tener instalado docker-compose.** Si no lo tiene puede ver el siguiente enlace para su instalación.
